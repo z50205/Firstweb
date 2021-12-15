@@ -6,40 +6,14 @@
 	<title>測試網頁</title>
 	<script src="jquery-3.6.0.min.js"></script>
 	<script type="text/javascript">
-		document.onmousemove = output_position()
-		function output_position() {
-			var ev = ev || window.event;
-			var spanObj = document.getElementById("change")
-			spanObj.innerHTML = ev.clientX;
-		}
-		function togglemenu(class_name) {
-			var navbar_items = document.querySelectorAll('.navbar_items');
-			if (navbar_items[1].style.display == 'none') {
-				for (var i = 0; i < navbar_items.length; i++) {
-					navbar_items[i].style.display = 'block';
-				}
-			}
-			else {
-				for (var i = 0; i < navbar_items.length; i++) {
-					navbar_items[i].style.display = 'none';
-				}
-			}
-			// if(menu.style.display=="none"){
-			// 	menu.style.display="block";
-			// }
-			// else{
-			// 	menu.style.display="none";
-
-
-		}
-		function toggleMenu(class_name,toggle_class) {
-			var navbar_items = document.querySelectorAll('.'+class_name);
+		function toggleMenu(class_name, toggle_class) {
+			var navbar_items = document.querySelectorAll('.' + class_name);
 			if (navbar_items[1].classList.contains(toggle_class)) {
 				for (var i = 0; i < navbar_items.length; i++) {
 					$(navbar_items[i]).removeClass(toggle_class);
 				}
 			}
-			else{
+			else {
 				for (var i = 0; i < navbar_items.length; i++) {
 					$(navbar_items[i]).addClass(toggle_class);
 				}
@@ -65,67 +39,42 @@
 			margin: 0px
 		}
 
-		nav {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			align-items: flex-end;
-			background-color: #cccccc;
-		}
-
-		nav>.item {
-			flex: auto;
-			background-color: #ccccff;
-			text-align: center;
-		}
-
-		nav>.item2 {
-			flex: auto;
-			background-color: #ccffff
-		}
-
-		.ani_try {
-			flex: auto;
-			background-color: #ffcccc;
-		}
-
 		.show {
 			display: block !important;
 		}
 
-		@media (min-width: 1001px) {
-			.navbar_container {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				align-items: center;
-				background-color: #90b7ff
-			}
-
-			.navbar_items {
-				display: block;
-				flex: auto;
-				font-size: 25px;
-				text-align: center;
-			}
-
-			.navbar_mark {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background-color: floralwhite
-			}
-
-			.navbar_logo {
-				flex: auto;
-				background-color: floralwhite;
-			}
-
-			.navbar_menu {
-				flex: auto;
-				Display: none
-			}
+		.navbar_container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			background-color: #90b7ff
 		}
+
+		.navbar_items {
+			display: block;
+			flex: auto;
+			font-size: 25px;
+			text-align: center;
+		}
+
+		.navbar_mark {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: floralwhite
+		}
+
+		.navbar_logo {
+			flex: auto;
+			background-color: floralwhite;
+		}
+
+		.navbar_menu {
+			flex: auto;
+			Display: none
+		}
+
 
 		@media (max-width:1000px) {
 			.navbar_items {
@@ -177,21 +126,7 @@
 	</style>
 </head>
 
-<body onmousemove="output_position()">
-	<nav>
-		<div class="item">這個世界你好!</div>
-		<div class="item2">難得有緣相會</div>
-		<div class="item">一鍵三連求求你了</div>
-	</nav>
-	<div class="ani_try">
-		<span id="change">這行會動</span>
-	</div>
-	<div onclick="toggleMenu('menu')">選單的標題</div>
-	<ul id="menu">
-		<li>項目 1-1</li>
-		<li>項目 1-2</li>
-		<li>項目 1-3</li>
-	</ul>
+<body>
 	<div class="navbar_container">
 		<div class="navbar_mark">
 			<div class="navbar_logo"><img src="mark.png" style="height: 100px;" /></div>
