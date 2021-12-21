@@ -33,100 +33,56 @@
 			};
 			req.send();
 		}
+		// 投影幕
+		var slideIndex = 0;
+		function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			if (n > slides.length) { slideIndex = 1 }
+			if (n < 1) { slideIndex = slides.length }
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+		}
+		function showSlides_auto() {
+			var i;
+			var ID;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			slideIndex++;
+			if (slideIndex > slides.length) { slideIndex = 1 }
+			if (slideIndex < 1) { slideIndex = slides.length }
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+			ID=setTimeout(showSlides_auto, 10000);
+			console.log(ID);
+		}
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+		function currentSlide(n) {
+			showSlides(slideIndex =n);
+		}
 	</script>
-	<style type="text/css">
-		body {
-			margin: 0px
-		}
-
-		.show {
-			display: block !important;
-		}
-
-		.navbar_container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			background-color: #90b7ff
-		}
-
-		.navbar_items {
-			display: block;
-			flex: auto;
-			font-size: 25px;
-			text-align: center;
-		}
-
-		.navbar_mark {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: floralwhite
-		}
-
-		.navbar_logo {
-			flex: auto;
-			background-color: floralwhite;
-		}
-
-		.navbar_menu {
-			flex: auto;
-			Display: none
-		}
-
-
-		@media (max-width:1000px) {
-			.navbar_items {
-				display: none;
-				width: 100%;
-				text-align: center;
-			}
-
-			.navbar_container {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				align-items: center;
-				background-color: #90b7ff
-			}
-
-			.navbar_mark {
-				display: flex;
-				flex-wrap: wrap;
-				width: 100%;
-				justify-content: center;
-				align-items: center;
-				background-color: floralwhite;
-				align-content: stretch;
-			}
-
-			.navbar_logo {
-				flex: auto;
-				text-align: left;
-			}
-
-			.navbar_menu {
-				flex: 0 0 0;
-				text-align: center;
-				Display: inline;
-				font-size: 30px;
-				font-family: Arial, Helvetica, sans-serif;
-				background-color: floralwhite;
-			}
-
-			.navbar_menu::after {
-				flex: 0 0 0;
-				content: '\2261';
-				font-size: 80px;
-				vertical-align: middle;
-				height: 100%;
-			}
-		}
-	</style>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<link rel="stylesheet" href="Firstweb.css" type="text/css" />
 </head>
 
-<body>
+<body onload="showSlides_auto()";>
+	<!-- 導覽列 -->
 	<div class="navbar_container">
 		<div class="navbar_mark">
 			<div class="navbar_logo"><img src="mark.png" style="height: 100px;" /></div>
@@ -136,7 +92,42 @@
 		<div class="navbar_items">本所位置及聯絡方式</div>
 		<div class="navbar_items">服務內容及時間</div>
 	</div>
-	<div id="web_content"></div>
+	<!-- 投影幕 -->
+	<div class="slideshow-container">
+		<div class="mySlides fade">
+			<div class="numbertext">1/3</div>
+			<img src="1.jpg" style="width:100%">
+			<div class="text">圖片 1</div>
+		</div>
+		<div class="mySlides fade">
+			<div class="numbertext">2/3</div>
+			<img src="2.jpg" style="width:100%">
+			<div class="text">圖片 2</div>
+		</div>
+		<div class="mySlides fade">
+			<div class="numbertext">3/3</div>
+			<img src="3.jpg" style="width:100%">
+			<div class="text">圖片 3</div>
+		</div>
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+		</div>
+	</div>
+	<button onclick="showSlides(1)">顯示</button>
+	<button onclick="plusSlides(1)">下一張</button>
+
+
+	<label class="information_button">
+		<input type="checkbox">
+		<span>
+			<ion-icon name="information-circle-outline"></ion-icon>
+			<div><ion-icon name="call-outline"></ion-icon>立即聯繫</div>
+			<div>XXXXXXXXXX</div>
+		</span>
+	</label>
+	<div class="huge_content_testing_button"></div>
 </body>
 
 </html>

@@ -1,0 +1,229 @@
+body {
+    margin: 0px;
+    font-family: Verdana, sans-serif;
+}
+
+/* 導覽列 */
+.navbar_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #90b7ff
+}
+
+.navbar_items {
+    display: block;
+    flex: auto;
+    font-size: 25px;
+    text-align: center;
+}
+
+.navbar_mark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: floralwhite
+}
+
+.navbar_logo {
+    flex: auto;
+    background-color: floralwhite;
+}
+
+.navbar_menu {
+    flex: auto;
+    Display: none
+}
+
+/* 投影幕 */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+@media (max-width:1000px) {
+    .navbar_items {
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #90b7ff
+    }
+
+    .navbar_mark {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: floralwhite;
+        align-content: stretch;
+    }
+
+    .navbar_logo {
+        flex: auto;
+        text-align: left;
+    }
+
+    .navbar_menu {
+        flex: 0 0 0;
+        text-align: center;
+        Display: inline;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: floralwhite;
+    }
+
+    .navbar_menu::after {
+        flex: 0 0 0;
+        content: '\2261';
+        font-size: 80px;
+        vertical-align: middle;
+        height: 100%;
+    }
+}
+
+.information_button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 330px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.information_button span {
+    position: absolute;
+    width: 130px;
+    height: 100%;
+    transform: translate(50px);
+    top: 0;
+    right: 0;
+    background-color: rgb(37, 175, 255);
+    border-radius: 80px;
+    transition: 0.5s;
+    /* box-shadow:0 15px 25px rgb(161, 221, 255); */
+}
+
+.information_button span ion-icon {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    top: 4px;
+    left: 4px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 80px;
+    transition: 0.5s;
+    /* box-shadow:0 15px 25px rgb(161, 221, 255); */
+}
+
+.information_button input {
+    appearance: none;
+    z-index: 1;
+    position: relative;
+}
+
+.information_button input:checked~span {
+    width: 100%;
+}
+
+.information_button span div {
+    font-size: 25px;
+    color: azure;
+    width: 250px;
+    left:130px;
+    transform: translate(80px);
+    padding-top: 4px;
+}
+.information_button span div  ion-icon{
+    position:relative;
+    width: 25px;
+    height: 25px;
+    color:black;
+    padding-right:8px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+.huge_content_testing_button {
+    position: absolute;
+    width: 300px;
+    height: 800px;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.show {
+    display: block;
+}
