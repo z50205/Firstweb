@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>導覽列簡潔中</title>
+    <style type="text/css">
+        .flex_Navbar {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .flex_Navbar_item {
+            flex: auto;
+            opacity: 10%;
+            font-size: 50px;
+            transition: 0.5s;
+            width:700px;
+            left:0px;
+        }
+
+        .toggle_Item {
+            width: 40px;
+        }
+        .menu{
+            opacity: 20%;
+        }
+        .flex_Navbar input {
+            position: relative;
+            z-index: 1;
+        }
+        .flex_Navbar input:checked~.flex_Navbar_item {
+            opacity: 100%;
+            font-size: 20px;
+        }
+        .flex_Navbar input:checked~*.menu {
+            opacity: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="flex_Navbar">
+        <input type="checkbox" class="menu">安安</input>
+        <div id='hello' class="flex_Navbar_item">
+            item1
+        </div>
+        <div id='hello' class="flex_Navbar_item">
+            item1
+        </div>
+        <div id='hello' class="flex_Navbar_item">
+            item1
+        </div>
+    </div>
+    <img src="1.jpg"/>
+
+
+</body>
+
+</html>
