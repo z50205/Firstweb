@@ -1,79 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <title>導覽列簡潔中</title>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <style type="text/css">
-        .flex_Navbar {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .toggle_Menu_style {
-            display: none;
-        }
-
-
-        .flex_Navbar input {
-            position: relative;
-            z-index: 1;
-            appearance: none;
-        }
-
-        @media (max-width:1000px) {
-            .toggle_Menu_style {
-                display: block;
-                flex: auto;
-                text-align: center;
-            }
-
-            .flex_Navbar_Container {
-                width: 100%;
-                opacity: 0%;
-                font-size: 20px;
-                text-align: center;
-                max-height: 0;
-                transition: .5s;
-                overflow:hidden ;
-                background-color: dodgerblue;
-            }
-
-            .flex_Navbar input:checked~.flex_Navbar_Container {
-                opacity: 100%;
-                width: 100%;
-                max-height: 100px;
-            }
-        }
-    </style>
-
+	<link rel="stylesheet" href="Navbar.css" type="text/css" />
 </head>
-
 <body>
 
-    <div class="flex_Navbar">
+    <div class="Navbar">
+         <!-- input綁定label與checkbox並變換圖示  -->
+        <div class="flex_space"><img src="mark.png" style="height: 100px;" /></div>
+         <!-- input綁定label與checkbox並變換圖示  -->
         <input type="checkbox" id='toggle_Menu'>
-
-        <label for="toggle_Menu" class="toggle_Menu_style">
-            <ion-icon name="menu-outline" />
+        <label for="toggle_Menu" class="Navbar_Menu">
+            <span style="font-size: 25px;font-family: Arial, Helvetica, sans-serif">Menu</span>
+            <ion-icon name="menu-outline" id="menu_mark" />
         </label>
-        <div class="flex_Navbar_Container">
-            <div>
-                關於我們
-            </div>
-            <div>
-                本所位置及聯絡方式
-            </div>
-            <div>
-                服務內容及時間
-            </div>
+        <!-- 選單內容 -->
+        <div class="Navbar_Container">
+            <div class="Navbar_Item">關於我們</div>
+            <div class="Navbar_Item">本所位置及聯絡方式</div>
+            <div class="Navbar_Item">服務內容及時間</div>
         </div>
-        <img src="1.JPG" />
     </div>
-
-
 </body>
-
 </html>

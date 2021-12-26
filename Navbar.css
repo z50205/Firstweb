@@ -1,0 +1,81 @@
+        /* 框架：整體為flexbox，開啟摺疊 */
+        .Navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: rgb(213, 213, 255); 
+        }
+        /* menu選單：大視窗不顯示 */
+        .Navbar_Menu {
+            display: none;
+        }
+
+        /* 輸入：並與label及mark綁定 */
+        .Navbar input {
+            position: relative;
+            z-index: 1;
+            appearance: none;
+            margin: 0px;
+        }
+        /* 容器-使用flex，並於大螢幕並排顯示 */
+        .Navbar_Container {
+            display: flex;
+            flex: auto;
+        }
+        /* 項目-使用flex，並於大螢幕並排顯示 */
+        .Navbar_Item {
+            flex: auto;
+            font-size: 25px;
+            text-align: center;
+            background-color: rgb(213, 213, 255);
+        }
+
+        @media (max-width:1000px) {
+            /* menu選單：小視窗顯示 */
+            .Navbar_Menu {
+                display: flex;
+                flex: 0 1 0;
+                text-align: right;
+                height: 100px;
+                max-height: 100px;
+                vertical-align: middle;
+                align-items: center;
+                background-color: rgb(213, 213, 255);
+            }
+            /* 圖示：大小定義 */
+            #menu_mark {
+                font-size: 40px;
+                height: 100px;
+            }
+            /* 標題空間：置中並降低menu大小 */
+            .flex_space {
+                flex: auto;
+                text-align: center;
+                height:100px;
+                background-color:ghostwhite;
+            }
+            /* 容器-使用flex，並於小螢幕一開始不顯示並設定動畫 */
+            .Navbar_Container {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                opacity: 0%;
+                font-size: 20px;
+                text-align: center;
+                max-height: 0;
+                transition: 0.5s;
+                overflow: hidden;
+                background-color: rgb(213, 213, 255);
+            }
+            /* 項目-使用flex，並於小螢幕不顯示但可並排排列 */
+            .Navbar_Item {
+                flex: none;
+                width: 100%;
+            }
+            /* 事件設定-調整展開並顯示的動畫 */
+            .Navbar input:checked~.Navbar_Container {
+                opacity: 100%;
+                width: 100%;
+                max-height: 100px;
+            }
+        }
